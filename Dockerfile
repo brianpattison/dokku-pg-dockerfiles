@@ -1,13 +1,13 @@
 # Forked from https://github.com/Kloadut/dokku-pg-dockerfiles
 
-FROM debian:wheezy
+FROM ubuntu:trusty
 MAINTAINER Brian Pattison "brian@brianpattison.com"
 
 # Prevent apt from starting postgres right after the installation
 RUN	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/policy-rc.d
 
 # Make Postgres 9.4 available for apt-get
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main 9.4" > "/etc/apt/sources.list.d/pgdg.list"
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main 9.4" > "/etc/apt/sources.list.d/pgdg.list"
 RUN apt-key adv --keyserver pgp.mit.edu --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 
 RUN apt-get update
