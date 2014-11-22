@@ -2,5 +2,5 @@ Dockerfiles
 -----------
 
 ```
-docker build -t dokku/postgresql github.com/Kloadut/dokku-pg-dockerfiles
+docker pull dokkuinstaller/postgres:9.3
 ```
